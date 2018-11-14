@@ -15,7 +15,12 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <!--
-      font_awesome link, Remember to put its CDN link
+      font_awesome link, Remember to put only its CDN link
+    -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <!--
+        CDN link
     -->
     <link rel="stylesheet" href="../font/font_awesome/css/fontawesome.min.css" type="text/css" />
     <link rel="stylesheet" href="../font/font_awesome/css/all.min.css" type="text/css" />
@@ -44,47 +49,71 @@
     Body begins here
   -->
   <body>
-    <div class="container col-xs-12">
-      <header class="col-xs-11">
+    <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <header class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h2>Wordstudy App</h2>
-
-        <nav>
-          <div class="leftNav">
-            <a href="#">How it works</a>
-            <a href="#">Download now</a>
-          </div>
-
-          <div class="rightNav">
-            <a href="#" target=""><i class="fab fa-facebook-f fa-fw" title="Facebook" style="background-color: #3b5998;"></i></a>
-            <a href="#" target=""><i class="fab fa-instagram fa-fw" title="Instagram" style="background-color: #517fa4;"></i></a>
-            <a href="#" target=""><i class="fab fa-twitter fa-fw" title="Twitter" style="background-color:#1da1f2;">
-              </i>
-            </a>
-          </div>
+        <nav class="headerNav">
+          <i class="navDropdown fas fa-bars" ></i>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
         </nav>
       </header>
+
       <!--
         main content begins here
       -->
-      <main class="main_content col-xs-12">
-        <img class="col-xs-9" src="imgmain.png" alt="phone" />
+      <main class="main_content col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <nav class="mainNav col-xs-11 col-sm-11 col-md-11 col-lg-11">
+          <ul class="leftNav">
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">Download now</a></li>
+          </ul>
 
-        <article class="article col-xs-11">
-          <h3>A Bible app for developing a <br />Bible study habit</h3>
-          <p class="p1">Wordstudy helps you daily to be consistent with God's word by providing engaging aspects daily to study on</p>
-          <h3>Download Wordstudy on</h3>
-          <button type="button" name="button">
-            <a href="#">
-              <i class="fab fa-google-play"></i>Google Play
-            </a>
-          </button>
-          <button>
-            <a href="#">
-              <i class="fab fa-app-store"></i>Coming soon
-            </a>
-          </button>
-        </article>
+          <ul class="rightNav">
+            <li> <a href="#"><i class="fab fa-facebook-f fa-fw" title="Facebook" style="background-color: #3b5998;"></i></a> </li>
+            <li><a href="#"><i class="fab fa-instagram fa-fw" title="Instagram" style="background-color: #517fa4;"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter fa-fw" title="Twitter" style="background-color:#1da1f2;">
+            </i>
+            </a></li>
+          </ul>
+        </nav>
+        <section class="col-xs-11 col-sm-11 col-md-9 col-lg-9">
+
+          <img class="col-xs-5 col-sm-5 col-md-5 col-lg-4" src="imgmain.png" alt="phone" />
+
+          <article class="article col-xs-11 col-sm-6 col-md-6 col-lg-6">
+            <h2>A Bible app for developing a <br />Bible study habit</h2>
+            <p class="p1">Wordstudy helps you daily to be consistent with God's word by <br /> providing engaging aspects daily to study on </p>
+            <h3>Download Wordstudy on</h3>
+            <div class="">
+              <button type="button" name="button">
+                <a href="#" id="playStore">
+                  <!--
+                    <i class="fab fa-google-play"></i>
+                  -->
+                  Google Play
+                  
+                </a>
+              </button>
+              <button>
+                <a href="#" id="appleStore">
+                  <!--
+                    <i class="fab fa-app-store"></i>
+                  -->
+
+                  Coming soon
+                </a>
+              </button>
+            </div>
+          </article>
+        </section>
       </main>
+      
+      <footer id="footer" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Copyright &copy; 2018 Wordstudy - All Rights Reserved
+      </footer>
     </div>
   </body>
 </html>
