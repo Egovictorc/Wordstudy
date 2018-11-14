@@ -123,6 +123,7 @@ footer {
   padding: .75em 0;
   font-family: Arial sans-serif;
 }
+  
 
 
 @media only screen and (max-width: 623px) {
@@ -165,6 +166,7 @@ footer {
 .col-xs-12 {
   width: 100%;
 }
+
 
 .container>header>nav.headerNav {
   display: block;
@@ -417,6 +419,7 @@ body>.container>main>section>article>div {
 .container>header>nav.headerNav>i {
   display: none;
 }
+
 .container>header>nav.headerNav>ul>li {
    display: inline-block;
 }
