@@ -23,7 +23,7 @@ body {
   justify-content: space-between;
   background-color: dodgerblue;
   padding: 0 0 0 4.165%;
-  
+
 }
 .container>header>h2 {
   line-height: 42px;
@@ -35,7 +35,7 @@ body {
 }
 
 .container>header>nav>i {
-  
+
   align-self: flex-end;
   height: 43px;
   line-height: 43px;
@@ -124,10 +124,10 @@ footer {
   padding: .75em 0;
   font-family: Arial sans-serif;
 }
-  
 
 
-@media only screen and (max-width: 623px) {
+
+@media only screen and (max-width: 623px)  {
     /*
       Extra small device (Portrait Phones)
     */
@@ -169,10 +169,6 @@ footer {
 }
 
 
-.container>header>nav.headerNav {
-  display: block;
-
-}
 .container>header>nav>i {
   display: inline-block;
 }
@@ -244,7 +240,8 @@ body>.container>main>section>img {
   /*
     End of extra small device (Portrait Phones)
   */
-@media only screen and (min-width: 624px) and (max-width: 768px) {
+@media only screen and (min-width: 624px)
+and (max-width: 767px) {
   /*
     Small device (Landscape phones and Tablet)
   */
@@ -286,13 +283,9 @@ body>.container>main>section>img {
     width: 100%;
   }
 
-
-  .container>header>nav.headerNav {
-    display: block;
-  }
-  .container>header>nav>i {
+.container>header>nav>i {
     display: inline-block;
-  }
+}
 .container>header>nav.headerNav>ul {
     background-color: rgba(0,0,0,0.9);
     position: absolute;
@@ -371,7 +364,8 @@ body>.container>main>section>article>div {
 
 }
 
-@media only screen and (min-width: 769px) and (max-width: 992px) {
+@media only screen and (min-width: 768px)
+/*and (max-width: 992px) */{
     /*
     medium screen device (landscape Tablet)
     */
@@ -414,15 +408,13 @@ body>.container>main>section>article>div {
   width: 100%;
 }
 
-.container>header>nav.headerNav {
-  display: block;
-}
 .container>header>nav.headerNav>i {
   display: none;
+
 }
 
 .container>header>nav.headerNav>ul>li {
-   display: inline-block;
+  display: inline-block;
 }
 
 .container>header>nav.headerNav>ul>li>a {
@@ -489,7 +481,7 @@ body>.container>main>section>img {
 
 
 
-@media only screen and (min-width: 993px){
+@media only screen and (min-width: 993px) {
   /*
     Large screen device (desktop )
   */
@@ -532,9 +524,6 @@ body>.container>main>section>img {
   width: 100%;
 }
 
-.container>header>nav.headerNav {
-  display: block;
-}
 .container>header>nav.headerNav>i {
   display: none;
 }
@@ -598,6 +587,7 @@ body>.container>main>section>article>div {
 body>.container>main>section>img {
   height: auto;
   max-height: 500px;
+  width: 30%;
   border-radius: 2.5em;
 }
 
