@@ -1,0 +1,65 @@
+/*
+  * Wordsudy Website
+*/
+
+$primary-color: mediumseagreen;
+$grid-columns: 12;
+$padding: 8px 16px;
+@import 'reset';
+@import 'mixins';
+
+
+body {
+  background-color: $primary-color;
+
+  font-family: Montserrat, sans-serif;
+  width: 100vw;
+
+}
+#container {
+  @include grid-width($col-span: 11);
+  margin: 1em auto 0;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  position: sticky;
+  top:0;
+  width: 100%;
+  nav {
+    &:hover ul {
+      background-color: lighten($primary-color, 1);
+      width: 100%;
+      left: 0%;
+      transition: .5s ease-in;
+    }
+    i {
+      padding: $padding;
+    }
+    a:hover {
+      background-color: complement($primary-color);
+      color: #fff;
+    }
+  }
+  ul {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    right: 0;
+  }
+  li {
+    width: 100%;
+  }
+}
+
+/*
+  *main-nav
+*/
+#social-nav {
+  ul{
+    display: flex;
+  }
+
+}

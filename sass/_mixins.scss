@@ -1,0 +1,3 @@
+@mixin grid-width ($col-span){
+  width: (100% / $grid-columns) * $col-span;
+}

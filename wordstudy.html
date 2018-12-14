@@ -1,29 +1,20 @@
-<!--
-  Wordstudy app
--->
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wordstudy App</title>
+    <meta charset="utf-8">
+    <meta http-equiv="U-XA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A bible study app for developing a Bible study habit" />
-    <meta name="description" content="Wordstudy app" />
-    <meta name="author" content="Victor" />
-    <link rel="icon" href="IMG-20181016-WA0005.jpg" type="image/jpg" sizes="16x16" />
-
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta name="author" content="Ego Victor">
+    <meta name="description" content="Website for studying God's word">
+    <meta name="Keywords" content="Bible study, wordstudy">
     <!--
       font_awesome link, Remember to put only its CDN link
     -->
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="awesome/all.min.css">
+    <link rel="stylesheet" href="awesome/fontawesome.min.css">
     <!--
-        CDN link
+      fontawesome CDN link
     -->
-    <link rel="stylesheet" href="../font/font_awesome/css/fontawesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="../font/font_awesome/css/all.min.css" type="text/css" />
 
     <!--
       Materials icon link (self host and CDN)
@@ -34,86 +25,95 @@
       Link to google fonts
     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <!--
-      My own style and script
-    -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="js/main.js"></script>
-    <!--
-      base link (You can use it later)
-    -->
-    <base href="images/" target="_blank" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="icon" href="" type="image.jpg" sizes="16x16" />
+    <base href="assets/" target="_self">
   </head>
 
   <!--
-    Body begins here
+    * body begins here
   -->
   <body>
-    <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <header class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h2>Wordstudy App</h2>
-        <nav class="headerNav">
-          <i class="navDropdown fas fa-bars" ></i>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact us</a></li>
+    <div id="container">
+      <header>
+        <h1>Wordstudy App</h1>
+        <nav class="header-nav">
+          <i class="fas fa-bars"></i>
+          <ul class="navbar">
+            <li class="nav-item">
+              <a href="" class="page-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="page-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="page-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="page-link">Blog</a>
+            </li>
+            <li id="nav-item">
+              <a href="" class="page-link">Contact us</a>
+            </li>
           </ul>
         </nav>
+
       </header>
-
       <!--
-        main content begins here
+        * main section begins here
       -->
-      <main class="main_content col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <nav class="mainNav col-xs-11 col-sm-11 col-md-11 col-lg-11">
-          <ul class="leftNav">
-            <li><a href="#">How it works</a></li>
-            <li><a href="#">Download now</a></li>
-          </ul>
+      <main id="main">
+        <div class="" id="">
+          <nav class="main-nav">
+            <ul class="navbar">
+              <li class="nav-item">
+                <a href="" class="page-link">How it works</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="page-link">Download now </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <nav id="social-nav">
+          <ul class="navbar">
+            <li id="" class="nav-item">
+              <a href="#" class="social-link"><i class="fab fa-facebook"></i>
+              </a>
+            </li>
 
-          <ul class="rightNav">
-            <li> <a href="#"><i class="fab fa-facebook-f fa-fw" title="Facebook" style="background-color: #3b5998;"></i></a> </li>
-            <li><a href="#"><i class="fab fa-instagram fa-fw" title="Instagram" style="background-color: #517fa4;"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter fa-fw" title="Twitter" style="background-color:#1da1f2;">
-            </i>
-            </a></li>
+            <li id="" class="nav-item">
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i>
+              </a>
+            </li>
+
+            <li id="" class="nav-item">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
           </ul>
         </nav>
-        <section class="col-xs-11 col-sm-11 col-md-9 col-lg-9">
-
-          <img class="col-xs-5 col-sm-5 col-md-5 col-lg-4" src="imgmain.png" alt="phone" />
-
-          <article class="article col-xs-11 col-sm-6 col-md-6 col-lg-6">
-            <h2>A Bible app for developing a <br />Bible study habit</h2>
-            <p class="p1">Wordstudy helps you daily to be consistent with God's word by <br /> providing engaging aspects daily to study on </p>
-            <h3>Download Wordstudy on</h3>
-            <div class="">
-              <button type="button" name="button">
-                <a href="#" id="playStore">
-                  <!--
-                    <i class="fab fa-google-play"></i>
-                  -->
-                  Google Play
-                  
-                </a>
-              </button>
-              <button>
-                <a href="#" id="appleStore">
-                  <!--
-                    <i class="fab fa-app-store"></i>
-                  -->
-
-                  Coming soon
-                </a>
-              </button>
-            </div>
-          </article>
-        </section>
+        <img src="imgmain.png" alt="">
+        <article id="main-article">
+          <h2>A Bible app for developing a <br /> consistent Bible Study Habit</h2>
+          <p>Wordstudy helps you daily to be consistent with God's word by <br /> providing engaging aspects daily to study on</p>
+          <h3>Download Wordstudy on</h3>
+          <ul class="navbar">
+            <li id="" class="nav-item">
+              <a href="#" class="download-link">
+                Google Play
+              </a>
+              <a href="#" class="download-link">
+                Coming soon
+              </a>
+            </li>
+          </ul>
+        </article>
       </main>
-      
-      <footer id="footer" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Copyright &copy; 2018 Wordstudy - All Rights Reserved
-      </footer>
+
+
     </div>
+    <footer>
+      <p>Copyright &copy; 2018 Wordstudy - All Rights Reserved</p>
+    </footer>
+
   </body>
 </html>
