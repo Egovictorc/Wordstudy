@@ -1,3 +1,23 @@
 @mixin grid-width ($col-span){
   width: (100% / $grid-columns) * $col-span;
 }
+
+@mixin transform($move-to, $type, $initial-value, $final-value ) {
+  @keyframes move-#{$move-to} {
+    0% {
+      opacity: 0;
+      #{$type}: $initial-value;
+    }
+    50% {
+
+    }
+    100% {
+      opacity: 1;
+      #{$type}: $final-value;
+    }
+  }
+}
+
+@include transform(right, transform, translateX(-100px), translateX(0) );
+
+@include transform(top-right, transform, translate(-100px, 100px), translate(0, 0) )

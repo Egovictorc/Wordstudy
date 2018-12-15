@@ -21,10 +21,35 @@ a:hover {
   color: #b33c7e;
 }
 
+h2, h3, p, article, main {
+  margin-bottom: 2em;
+}
+
+@keyframes move-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes move-top-right {
+  0% {
+    opacity: 0;
+    transform: translate(-100px, 100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
 body {
   background-color: mediumseagreen;
+  background-image: linear-gradient(to bottom right, #3db673, #699);
   font-family: Montserrat, sans-serif;
-  width: 100vw;
+  width: 100%;
 }
 
 #container {
@@ -33,19 +58,20 @@ body {
 }
 
 header {
+  background-color: mediumseagreen;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  margin-bottom: 0.75em;
   position: sticky;
   top: 0;
   width: 100%;
 }
 header nav:hover ul {
-  background-color: #3db773;
+  background-color: #787878;
   width: 100%;
-  left: 0%;
-  transition: 0.5s ease-in;
+  transition: 0.5s ease-in-out;
 }
 header nav i {
   padding: 8px 16px;
@@ -62,13 +88,63 @@ header ul {
 }
 header li {
   width: 100%;
+  border-top: 1px solid #fff;
+  text-align: center;
+}
+header li:first-child {
+  border-top: none;
 }
 
 /*
   *main-nav
 */
-#social-nav ul {
+main nav {
+  margin-bottom: 1em;
+}
+main ul {
   display: flex;
+}
+
+.social-item {
+  animation-name: move-top-right 0.1s ease-in;
+  animation-fill-mode: backwards;
+  margin: 0;
+}
+.social-item:first-child {
+  animation-delay: 0.2s;
+}
+.social-item:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.social-item:nth-child(3) {
+  animation-delay: 0.7s;
+}
+.social-item a {
+  padding: 0;
+  margin: 0 0 0 0.75em;
+}
+.social-item i {
+  padding: 0.35em;
+  box-sizing: content-box;
+}
+
+#app-image {
+  width: 50%;
+  height: auto;
+  max-height: 300px;
+  margin: auto;
+  margin-bottom: 1.5em;
+  display: block;
+  box-shadow: inset -1px 2px 2px 1px #ccc;
+  border-radius: 25px;
+  animation: move-right 0.3s ease-in;
+  animation-fill-mode: backwards;
+}
+
+article {
+  margin: auto;
+  text-align: center;
+  width: 80%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -11,9 +11,9 @@ $padding: 8px 16px;
 
 body {
   background-color: $primary-color;
-
+  background-image: linear-gradient(to bottom right, lighten($primary-color, .7), #699);
   font-family: Montserrat, sans-serif;
-  width: 100vw;
+  width: 100%;
 
 }
 #container {
@@ -21,19 +21,20 @@ body {
   margin: 1em auto 0;
 }
 header {
+  background-color: $primary-color;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  margin-bottom: .75em;
   position: sticky;
   top:0;
   width: 100%;
   nav {
     &:hover ul {
-      background-color: lighten($primary-color, 1);
+      background-color: grayscale($primary-color);
       width: 100%;
-      left: 0%;
-      transition: .5s ease-in;
+      transition: .5s ease-in-out;
     }
     i {
       padding: $padding;
@@ -51,15 +52,65 @@ header {
   }
   li {
     width: 100%;
+    border-top: 1px solid #fff;
+    text-align: center;
+    &:first-child {
+      border-top: none;
+    }
   }
 }
+
+
 
 /*
   *main-nav
 */
-#social-nav {
-  ul{
+main {
+  nav {
+    margin-bottom: 1em;
+  }
+  ul {
     display: flex;
   }
+}
+.social-item {
+  animation-name: move-top-right .1s ease-in;
+  animation-fill-mode: backwards;
+  margin: 0;
+  &:first-child {
+    animation-delay: .2s;
+  }
+  &:nth-child(2) {
+    animation-delay: .5s;
+  }
+  &:nth-child(3) {
+    animation-delay: .7s;
+  }
+  a {
+    padding: 0;
+    margin: 0 0 0 .75em;
+  }
+  i {
+    padding: .35em;
+    box-sizing: content-box;
+  }
 
+}
+
+#app-image {
+  width: 50%;
+  height: auto;
+  max-height: 300px;
+  margin: auto;
+  margin-bottom: 1.5em;
+  display: block;
+  box-shadow: inset -1px 2px 2px 1px #ccc;
+  border-radius: 25px;
+  animation: move-right .3s ease-in;
+  animation-fill-mode: backwards;
+}
+article {
+  margin: auto;
+  text-align: center;
+  width: 80%;
 }

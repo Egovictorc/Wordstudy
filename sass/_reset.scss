@@ -16,3 +16,7 @@ a {
     color: complement($primary-color);
   }
 }
+
+h2, h3, p, article, main {
+  margin-bottom: 2em;
+}
