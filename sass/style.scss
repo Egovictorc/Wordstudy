@@ -3,6 +3,7 @@
 */
 
 $primary-color: mediumseagreen;
+$secondary-color: rgba(#222, .95);
 $grid-columns: 12;
 $padding: 8px 16px;
 @import 'reset';
@@ -11,10 +12,10 @@ $padding: 8px 16px;
 
 body {
   background-color: $primary-color;
-  background-image: linear-gradient(to bottom right, lighten($primary-color, .7), #699);
+  background-image: linear-gradient(to bottom right, $primary-color, complement($primary-color));
   font-family: Montserrat, sans-serif;
   width: 100%;
-
+  overflow-x: hidden;
 }
 #container {
   @include grid-width($col-span: 11);
@@ -32,23 +33,25 @@ header {
   width: 100%;
   nav {
     &:hover ul {
-      background-color: grayscale($primary-color);
+      background-color: $secondary-color;
       width: 100%;
-      transition: .5s ease-in-out;
+      right: 0;
     }
     i {
       padding: $padding;
+      font-size: 19px;
     }
-    a:hover {
-      background-color: complement($primary-color);
-      color: #fff;
-    }
+
   }
   ul {
+    margin-top: 1px;
     position: absolute;
     overflow: hidden;
+    top: 39px;
     width: 0;
     right: 0;
+    transition: .5s ease;
+    flex-direction: column;
   }
   li {
     width: 100%;
@@ -63,41 +66,39 @@ header {
 
 
 /*
-  *main-nav
+  *section-nav
 */
-main {
+section {
   nav {
     margin-bottom: 1em;
   }
-  ul {
-    display: flex;
-  }
+
 }
 .social-item {
-  animation-name: move-top-right .1s ease-in;
+  animation: move-top-right .1s ease;
   animation-fill-mode: backwards;
   margin: 0;
   &:first-child {
     animation-delay: .2s;
   }
   &:nth-child(2) {
-    animation-delay: .5s;
+    animation-delay: .4s;
   }
   &:nth-child(3) {
-    animation-delay: .7s;
+    animation-delay: .6s;
   }
   a {
     padding: 0;
     margin: 0 0 0 .75em;
   }
   i {
-    padding: .35em;
+    padding: .35em .3em;
     box-sizing: content-box;
   }
 
 }
 
-#app-image {
+#phone-image {
   width: 50%;
   height: auto;
   max-height: 300px;
@@ -106,11 +107,68 @@ main {
   display: block;
   box-shadow: inset -1px 2px 2px 1px #ccc;
   border-radius: 25px;
-  animation: move-right .3s ease-in;
+  animation: move-right .3s ease;
   animation-fill-mode: backwards;
+
 }
 article {
   margin: auto;
   text-align: center;
   width: 80%;
+  h2, h3 {
+    animation: move-left .4s ease .5s;
+    animation-fill-mode: backwards;
+  }
+  h3 {
+    margin-bottom: 1em;
+  }
+  p {
+    animation: move-right .4s ease .2s;
+    animation-fill-mode: backwards;
+  }
+  ul {
+    justify-content: space-between;
+    margin: auto;
+    flex-direction: column;
+    width: 80%;
+    height: 90px;
+    align-content: space-between;
+  }
+  li {
+    animation: move-top .3s ease;
+    animation-fill-mode: backwards;
+
+    &:first-child {
+      animation-delay: .6s;
+    }
+    &:nth-child(2) {
+      animation-delay: .7s;
+    }
+  }
+  a {
+
+    border-radius: 50px;
+    background-size: 16px;
+    -webkit-background-size: 16px;
+    -ms-background-size: 16px;
+
+    background-repeat: no-repeat;
+    background-position: 9% 50%;
+
+    &[data-download*="google"]{
+      background-image: url("../assets/google-play.png");
+    }
+    &[data-download*="soon"]{
+      background-image: url("../assets/apple.png");
+    }
+  }
+}
+footer {
+  background-color: complement($primary-color);
+  display: flex;
+  align-items: center;
+  height: 50px;
+  small {
+    margin: auto;
+  }
 }

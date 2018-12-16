@@ -4,9 +4,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
 }
 ul {
   list-style-type: none;
+  display: flex;
 }
 a {
   text-decoration: none;
@@ -15,8 +17,17 @@ a {
   &:hover {
     color: complement($primary-color);
   }
+  &[class*="download"] {
+    background-color: #fff;
+    color: #000;
+    &:hover {
+      color: complement($primary-color);
+    }
+  }
+
 }
 
-h2, h3, p, article, main {
+h2, h3, p, article, section, social-nav {
   margin-bottom: 2em;
+  line-height: 1.5;
 }

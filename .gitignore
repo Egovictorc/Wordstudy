@@ -1,5 +1,12 @@
+#ignore font awesome styles
 Awesome/
+
+#ignore generated css/ directory files
+css/
+
+#ignore js files
 js/
+
+#ignore node modules
 node_modules/
-*.json
-*.js
+*[.json, .js]
