@@ -2,10 +2,7 @@
   * Wordsudy Website
 */
 
-$primary-color: mediumseagreen;
-$secondary-color: rgba(#222, .95);
-$grid-columns: 12;
-$padding: 8px 16px;
+@import 'variables';
 @import 'reset';
 @import 'mixins';
 
@@ -171,4 +168,8 @@ footer {
   small {
     margin: auto;
   }
+}
+
+@media respond-above($mobile-large) {
+  
 }
