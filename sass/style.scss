@@ -5,18 +5,22 @@
 @import 'variables';
 @import 'reset';
 @import 'mixins';
-
-
+html {
+  @include respond ($mobile-port);
+}
 body {
   background-color: $primary-color;
   background-image: linear-gradient(to bottom right, $primary-color, complement($primary-color));
   font-family: Montserrat, sans-serif;
   width: 100%;
-  overflow-x: hidden;
+  height: 100vh;
+  overflow: hidden;
+ 
 }
 #container {
   @include grid-width($col-span: 11);
   margin: 1em auto 0;
+  
 }
 header {
   background-color: $primary-color;
@@ -24,7 +28,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: .75em;
+  
   position: sticky;
   top:0;
   width: 100%;
@@ -66,49 +70,101 @@ header {
   *section-nav
 */
 section {
+  
   nav {
     margin-bottom: 1em;
   }
-
+  .top-section {
+    margin: 0 auto 5em;
+    background-color: orange; 
+  }
 }
-.social-item {
-  animation: move-top-right .1s ease;
-  animation-fill-mode: backwards;
-  margin: 0;
-  &:first-child {
-    animation-delay: .2s;
+  .bottom-section {
+    background-color: green;
+    
+    @include respond(mobile-port) {
+      //position: relative;
+      //top: 0;
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      
+    }
   }
-  &:nth-child(2) {
-    animation-delay: .4s;
+  aside{
+    @include respond(mobile-port) {
+      
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      display: flex;
+    }
+    background-color: blue;    
   }
-  &:nth-child(3) {
-    animation-delay: .6s;
-  }
-  a {
-    padding: 0;
-    margin: 0 0 0 .75em;
-  }
-  i {
-    padding: .35em .3em;
-    box-sizing: content-box;
+  #social-list {
+    @include respond(mobile-port) {
+      flex-direction: column;
+    height: 8em;
+    justify-content: space-around;
+    
+      }
+    }
+  
+  .social-item {
+    animation: move-top-right .1s ease;
+    animation-fill-mode: backwards;
+    margin: 0;
+    &:first-child {
+      animation-delay: .2s;
+    }
+    &:nth-child(2) {
+      animation-delay: .4s;
+    }
+    &:nth-child(3) {
+      animation-delay: .6s;
+    }
+    a {
+      padding: 0;
+      margin: 0 0 0 .75em;
+    }
+    i {
+      padding: .35em .3em;
+      box-sizing: content-box;
+    }
+
   }
 
-}
 
-#bottom-section {
+.main-section {
+  width: 80%;
+  display: inline-block;
+  margin: auto;
+    
+
+  @include respond(mobile-port) {
+    
+  }
   @include respond(tablet-port) {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-around;
-    flex-basis: 80%;
+
   }
 
 }
+#phone-box {
+  background-color: red;
+
+  @include respond(tablet-port) {
+    flex-basis: 40%;
+  }
+}
 #phone-image {
-  width: 50%;
+  width: 48%;
   height: auto;
-  max-height: 300px;
+  max-height: 220px;
   margin: auto;
   margin-bottom: 1.5em;
   display: block;
@@ -116,21 +172,26 @@ section {
   border-radius: 25px;
   animation: move-right .3s ease;
   animation-fill-mode: backwards;
-
+  @include respond(mobile-port) {
+    width: 50%;
+    max-width: 200px;
+    max-height: 280px;
+  }
   @include respond(tablet-port) {
-    display: inline-block;
-    width: 60%;
+    width: 80%;
   }
 
 }
 article {
+  background-color: red;
   margin: auto;
-  text-align: center;
-  width: 80%;
+  text-align: left;
+
   @include respond(tablet-port) {
-    width: 50%;
+    margin: 0;
+    width: 55%;
     display: inline-block;
-    
+
   }
   h2, h3 {
     animation: move-left .4s ease .5s;
@@ -147,13 +208,37 @@ article {
     justify-content: space-between;
     margin: auto;
     flex-direction: column;
-    width: 80%;
+    align-items: center;
     height: 90px;
     align-content: space-between;
+    @include respond(mobile-land) {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 80%;
+    }
+    @include respond (tablet-port) {
+      width: 100%;
+      max-width: 400px;
+      text-align: left;
+      justify-content: space-between;
+      margin: 0;
+    }
+
   }
   li {
     animation: move-top .3s ease;
     animation-fill-mode: backwards;
+    width: 85%;
+    max-width: 180px;
+    @include respond(mobile-port) {
+      width: 50%;
+    }
+    @include respond(mobile-land) {
+      width: 45%;
+    }
+    @include respond (tablet-port) {
+      width: 47%;
+    }
 
     &:first-child {
       animation-delay: .6s;
@@ -163,7 +248,7 @@ article {
     }
   }
   a {
-
+    text-align: center;
     border-radius: 50px;
     background-size: 16px;
     -webkit-background-size: 16px;
@@ -174,9 +259,11 @@ article {
 
     &[data-download*="google"]{
       background-image: url("../assets/google-play.png");
+
     }
     &[data-download*="soon"]{
       background-image: url("../assets/apple.png");
+
     }
   }
 }
@@ -188,5 +275,7 @@ footer {
   small {
     margin: auto;
   }
+  @include respond (mobile-port) {
+    
+  }
 }
-

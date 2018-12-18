@@ -27,7 +27,10 @@ a {
 
 }
 
-h2, h3, p, article, section, social-nav, div {
+h2, h3, p, social-nav {
   margin-bottom: 2em;
   line-height: 1.5;
 }
+header, #topsection-nav, .bottom-section {
+  margin: 0 auto 2em;
+} 

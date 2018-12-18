@@ -53,29 +53,31 @@ $desktop-land: 1200px;
 @mixin respond ($breakpoint) {
 @if $breakpoint == mobile-port {
   @media (min-width: $mobile-port) {
-    @include responsive-grid(xs); @content; }
-}
+    @content; }
+  }
 @if $breakpoint == mobile-land {
   @media (min-width: $mobile-land) {
-    @include responsive-grid(sm); @content; }
-}
+    @content; }
+  }
 @if $breakpoint == tablet-port {
   @media (min-width: $tablet-port) { 
-    @include responsive-grid(md); @content; }
-}
+    @content; }
+  }
 @if $breakpoint == tablet-land {
   @media (min-width: $tablet-land) {
-    @include responsive-grid(lg); @content; }
-}
+    @content; }
+  }
 @if $breakpoint == tablet-large {
-  @media (min-width: $tablet-large) {
-    @include responsive-grid(xl); @content; }
-}
+  @media (min-width: $tablet-land) {
+    @content; }
+  }
 @if $breakpoint == desktop-port {
-  @media (min-width: $desktop-port) { @content; }
+  @media (min-width: $desktop-port) {
+  @content; }
 }
 @if $breakpoint == desktop-land {
-  @media (min-width: $desktop-land) { @content; }
-}
+  @media (min-width: $desktop-land) {
+  @content; }
 
+}
 }
