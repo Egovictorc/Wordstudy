@@ -1,7 +1,18 @@
+$grid-columns: 12;
+// RESPONSIVE GRID 
+@mixin responsive-grid ($size) {
+  @for $col-span from 1 through 12 {
+    .col-#{$size}-#{$col-span}{
+      width: (100% / $grid-columns) * $col-span;
+    } 
+  }
+}
+
 @mixin grid-width ($col-span){
   width: (100% / $grid-columns) * $col-span;
 }
 
+// ANIMATION
 @mixin transform($move-to, $type, $initial-value, $custom-value, $final-value ) {
   @keyframes move-#{$move-to} {
     0% {
@@ -27,3 +38,44 @@
 @include transform(top, transform, translateY(150px),  translateY(-20px), translateY(0) );
 
 @include transform(top-small, transform, translateY(0px),  translateY(-10px), translateY(-10px) );
+
+
+// An Array of breakpoints.
+$mobile-port: 400px;
+$mobile-land: 600px;
+$tablet-port: 768px;
+$tablet-land: 992px;
+$desktop-port: 1024px;
+$desktop-land: 1200px;
+
+/*
+// MEDIA QUERY MANAGER */
+@mixin respond ($breakpoint) {
+@if $breakpoint == mobile-port {
+  @media (min-width: $mobile-port) {
+    @include responsive-grid(xs); @content; }
+}
+@if $breakpoint == mobile-land {
+  @media (min-width: $mobile-land) {
+    @include responsive-grid(sm); @content; }
+}
+@if $breakpoint == tablet-port {
+  @media (min-width: $tablet-port) { 
+    @include responsive-grid(md); @content; }
+}
+@if $breakpoint == tablet-land {
+  @media (min-width: $tablet-land) {
+    @include responsive-grid(lg); @content; }
+}
+@if $breakpoint == tablet-large {
+  @media (min-width: $tablet-large) {
+    @include responsive-grid(xl); @content; }
+}
+@if $breakpoint == desktop-port {
+  @media (min-width: $desktop-port) { @content; }
+}
+@if $breakpoint == desktop-land {
+  @media (min-width: $desktop-land) { @content; }
+}
+
+}

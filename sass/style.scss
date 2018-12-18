@@ -95,6 +95,16 @@ section {
 
 }
 
+#bottom-section {
+  @include respond(tablet-port) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-basis: 80%;
+  }
+
+}
 #phone-image {
   width: 50%;
   height: auto;
@@ -107,11 +117,21 @@ section {
   animation: move-right .3s ease;
   animation-fill-mode: backwards;
 
+  @include respond(tablet-port) {
+    display: inline-block;
+    width: 60%;
+  }
+
 }
 article {
   margin: auto;
   text-align: center;
   width: 80%;
+  @include respond(tablet-port) {
+    width: 50%;
+    display: inline-block;
+    
+  }
   h2, h3 {
     animation: move-left .4s ease .5s;
     animation-fill-mode: backwards;
@@ -170,6 +190,3 @@ footer {
   }
 }
 
-@media respond-above($mobile-large) {
-  
-}
