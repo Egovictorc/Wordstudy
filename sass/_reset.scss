@@ -1,16 +1,11 @@
 
-* {
-  color: #fff;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 
-}
+/*
 ul {
   list-style-type: none;
   display: flex;
 }
-a {
+.page-link {
   text-decoration: none;
   display: block;
   padding: $padding;
@@ -22,15 +17,27 @@ a {
     color: #000;
     &:hover {
       color: complement($primary-color);
+      background-color: darken($white-color, 15%);
     }
   }
 
 }
 
-h2, h3, p, social-nav {
-  margin-bottom: 2em;
+h2, h3, p {
+  margin-bottom: 1rem;
   line-height: 1.5;
 }
-header, #topsection-nav, .bottom-section {
-  margin: 0 auto 2em;
-} 
+aside, main {
+  margin: 0 auto 1rem;
+  @include grid-width($col-span: 11);
+}
+section  {
+  margin-bottom: 5rem;
+  aside, .phone-box, article {
+    margin-bottom: 1.25rem;
+  }
+  li {
+    margin-bottom: .5rem;
+  }
+}
+*/

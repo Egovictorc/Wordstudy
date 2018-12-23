@@ -9,4 +9,4 @@ js/
 
 #ignore node modules
 node_modules/
-*[.json, .js]
+*[.json, .js, .zip, .log, .config]
