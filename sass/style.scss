@@ -2,11 +2,10 @@
   * Wordsudy Website
 */
 @import 'variables';
-@import 'base';
 @import 'mixins';
+@import 'base';
 @import 'animations';
 //@import 'reset';
-
 @import 'components/header';
 @import 'typography';
 @import 'components/main';
