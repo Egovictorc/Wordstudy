@@ -1,4 +1,6 @@
-/*$grid-columns: 12;
+$grid-columns: 12;
+$gutter-horizontal: 2rem;
+$gutter-vertical: 3rem;
 // RESPONSIVE GRID
 @mixin responsive-grid ($size) {
   @for $col-span from 1 through 12 {
@@ -15,12 +17,12 @@
 
 // A map of breakpoints.
 $breakpoints: (
-  mobile-port: 25rem,  //400px
-  mobile-land: 37.5rem,  //600px
-  tablet-port: 48rem,  //768px
-  tablet-land: 62rem,  //992px
-  desktop-port: 64rem,  //1024px
-  desktop-land: 75rem //1200px
+  mobile-port: 25rem,  //400px  xs
+  mobile-land: 37.5rem,  //600px sm
+  tablet-port: 48rem,  //768px md
+  tablet-land: 62rem,  //992px lg
+  desktop-port: 64rem,  //1024px xl
+  desktop-land: 75rem //1200px xxl
 );
 
 
@@ -69,7 +71,7 @@ $desktop-port: 64rem; //1024px
 $desktop-land: 75rem; //1200px
 
 
-// MEDIA QUERY MANAGER 
+// MEDIA QUERY MANAGER
 @mixin respond ($breakpoint) {
   @if $breakpoint == mobile-port {
     @media (min-width: $mobile-port) {
