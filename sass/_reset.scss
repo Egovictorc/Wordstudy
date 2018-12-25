@@ -1,0 +1,43 @@
+
+
+/*
+ul {
+  list-style-type: none;
+  display: flex;
+}
+.page-link {
+  text-decoration: none;
+  display: block;
+  padding: $padding;
+  &:hover {
+    color: complement($primary-color);
+  }
+  &[class*="download"] {
+    background-color: #fff;
+    color: #000;
+    &:hover {
+      color: complement($primary-color);
+      background-color: darken($white-color, 15%);
+    }
+  }
+
+}
+
+h2, h3, p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+aside, main {
+  margin: 0 auto 1rem;
+  @include grid-width($col-span: 11);
+}
+section  {
+  margin-bottom: 5rem;
+  aside, .phone-box, article {
+    margin-bottom: 1.25rem;
+  }
+  li {
+    margin-bottom: .5rem;
+  }
+}
+*/

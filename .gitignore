@@ -1,5 +1,12 @@
-*.json
+#ignore font awesome styles
+Awesome/
+!sass/
+#ignore generated css/ directory files
+css/
+
+#ignore js files
+js/
+
+#ignore node modules
 node_modules/
-*.eslintrc.js
-*.js
-awesome/
+*[.json, .js, .zip, .log, .config]

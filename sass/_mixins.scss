@@ -1,0 +1,114 @@
+$grid-columns: 12;
+$gutter-horizontal: 2rem;
+$gutter-vertical: 3rem;
+// RESPONSIVE GRID
+@mixin responsive-grid ($size) {
+  @for $col-span from 1 through 12 {
+    .col-#{$size}-#{$col-span}{
+      width: (100% / $grid-columns) * $col-span;
+    }
+  }
+}
+
+@mixin grid-width ($col-span){
+  width: (100% / $grid-columns) * $col-span;
+}
+
+
+// A map of breakpoints.
+$breakpoints: (
+  mobile-port: 25rem,  //400px  xs
+  mobile-land: 37.5rem,  //600px sm
+  tablet-port: 48rem,  //768px md
+  tablet-land: 62rem,  //992px lg
+  desktop-port: 64rem,  //1024px xl
+  desktop-land: 75rem //1200px xxl
+);
+
+
+@mixin respond-above ($breakpoint) {
+  //Check if key exists in map
+  @if map-has-key($breakpoints, $breakpoint) {
+    //Assign the value of key to $breakpoint-vlaue
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    // The media query
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+    // if the breakpoint does not exist
+  }
+  @else {
+    // Log a warning
+    @warn 'invalid breakpoint: ' $breakpoint;
+  }
+}
+
+/*
+@mixin respond-above ($breakpoint) {
+  // If breakpoint exists in the map
+@if map-has-key($breakpoints, $breakpoint) {
+  // Get the breakpoint value.
+
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+  //The media query.
+  @media (min-width: $breakpoint-value){
+    @content;
+  }
+  // If the breakpoint does not exist.
+} @else {
+    // Log a warning
+    @warn 'invalid breakpoint: ' $breakpoint;
+  }
+}
+
+
+// An Array of breakpoints.
+$mobile-port: 25rem; //400px
+$mobile-land: 37.5rem; //600px
+$tablet-port: 48rem; //768px
+$tablet-land: 62rem; //992px
+$desktop-port: 64rem; //1024px
+$desktop-land: 75rem; //1200px
+
+
+// MEDIA QUERY MANAGER
+@mixin respond ($breakpoint) {
+  @if $breakpoint == mobile-port {
+    @media (min-width: $mobile-port) {
+      @content; }
+    }
+  @if $breakpoint == mobile-land {
+    @media (min-width: $mobile-land) {
+      @content; }
+    }
+  @if $breakpoint == tablet-port {
+    @media (min-width: $tablet-port) {
+      @content; }
+    }
+  @if $breakpoint == tablet-land {
+    @media (min-width: $tablet-land) {
+      @content; }
+    }
+  @if $breakpoint == tablet-large {
+    @media (min-width: $tablet-land) {
+      @content; }
+    }
+  @if $breakpoint == desktop-port {
+    @media (min-width: $desktop-port) {
+    @content; }
+  }
+  @if $breakpoint == desktop-land {
+    @media (min-width: $desktop-land) {
+    @content; }
+  }
+}
+
+@mixin flex ($fd, $js, $ai) {
+  display: flex;
+  flex-direction: $fd;
+  -ms-flex-direction: $fd;
+  -webkit-flex-direction: $fd;
+  justify-content: $js;
+  align-items: $ai;
+}
+*/
