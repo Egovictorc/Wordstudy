@@ -1,0 +1,27 @@
+
+// ANIMATION
+@mixin transform($move-to, $initial-value, $custom-value, $final-value ) {
+  @keyframes move-#{$move-to} {
+    0% {
+      opacity: 0;
+      transform: $initial-value;
+    }
+    80% {
+      transform: $custom-value;
+    }
+    100% {
+      opacity: 1;
+      transform: $final-value;
+    }
+  }
+}
+
+@include transform(right, translateX(-15rem),  translateX(2rem), translateX(0) );
+
+@include transform(top-right, translate(-15rem, 15rem),  translate(2rem, -2rem), translate(0, 0) );
+
+@include transform(left, translateX(15rem),  translateX(-2rem), translateX(0) );
+
+@include transform(top, translateY(150px),  translateY(-2rem), translateY(0) );
+
+@include transform(top-small, translateY(0px),  translateY(-1rem), translateY(-1rem) );

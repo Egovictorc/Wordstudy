@@ -1,0 +1,192 @@
+
+// FLEX LIST ROW
+@mixin flex-list-row ($jc) {
+    display: flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    justify-content: $jc;
+    flex-wrap: wrap;
+  }
+
+  // FLEX COLUMN
+@mixin flex-column ($jc) {
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    justify-content: $jc;
+
+  }
+
+.main {
+    margin-top: $margin-block-top;
+    margin-left: auto;
+    margin-right: auto;
+    width: $width-standard;
+    max-width: $width-max;
+
+    &__list {
+       @include flex-list-row(flex-start);
+       list-style-type: none;
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-right: $gutter-item-right;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        padding: $link-padding;
+        color: $color-white;
+        font-size: $font-size-link;
+        &:hover {
+            color: $color-link-hover;
+
+        }
+
+        &[data-type*="download"] {
+            background-color: $color-white;
+            color: $color-black;
+            box-shadow: $box-shadow-link;
+
+            &:hover {
+                background-color: $color-link-bg-hover;
+                color: $color-link-hover;
+            }
+        }
+    }
+}
+
+.section {
+    @include flex-column(center);
+    margin-top: $margin-block-top;
+
+    @include respond-above(tablet-land){
+        @include responsive-grid(lg);
+        @include flex-list-row(space-evenly);
+        align-items: center;
+
+    }
+
+    &__phone {
+        border-radius:  2.5rem 2rem;
+        box-shadow: -.3rem .3rem .5rem $color-overlay;
+        display: block;
+        margin: 0 auto;
+        width: 45%;
+        height: auto;
+        max-width: 20rem;
+        max-height: 22rem;
+        transition: all .5s ease;
+        animation-name: move-right;
+        animation-duration: 2s;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease;
+
+        @include respond-above(tablet-land){
+            @include responsive-grid(lg);
+            border-radius: 4rem;
+            position: relative;
+            top: 15%;
+            width: 95%;
+            max-height: 40rem;
+            max-width: 32rem;
+
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.article {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    text-align: center;
+
+    @include respond-above(tablet-land){
+        @include responsive-grid(lg);
+        width: auto;
+        text-align: left;
+        margin: 0;
+    }
+
+
+    &__heading--secondary {
+        animation-name: move-left;
+        animation-duration: 2s;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease;
+        margin-top: $margin-block-top * 1.5;
+        text-shadow: $text-shadow;
+    }
+    &__paragraph {
+        font-size: $font-size-paragraph;
+        margin-top: $margin-block-top * 1.5;
+    }
+    &__heading--tertiary {
+        margin-top: $margin-block-top * 1.5;
+        text-shadow: $text-shadow;
+        animation-name: move-left;
+        animation-duration: 2s;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease;
+    }
+    &__list {
+        @include flex-column (space-between);
+        list-style-type: none;
+        height: 10rem;
+        margin-top: $margin-block-top / 2;
+
+        @include respond-above(mobile-land){
+            @include responsive-grid(sm);
+            flex-direction: row;
+            justify-content: center;
+        }
+        @include respond-above(tablet-land){
+            @include responsive-grid(lg);
+            justify-content: flex-start;
+        }
+    }
+    &__item {
+        @include respond-above(mobile-land){
+            @include responsive-grid(sm);
+            &:first-child {
+            margin-right: $gutter-item-right;
+            }
+        }
+    }
+    &__link {
+        background-color: $color-white;
+        border-radius: 50px;
+        color: $color-black;
+        display: inline-block;
+        font-size: 1.6rem;
+        text-decoration: none;
+        padding: .8rem 3.6rem;
+        background-repeat: no-repeat;
+        background-size: 1.6rem;
+        background-position: 10% center;
+        box-shadow: $box-shadow-link;
+        animation-name: move-top;
+        animation-duration: 2s;
+        animation-fill-mode: backwards;
+        animation-timing-function: ease;
+        &:hover {
+            color: complement($color-primary);
+            background-color: #ddd;
+
+        }
+        &--google-play {
+            background-image: url("../assets/google-play.png");
+
+        }
+        &--coming-soon {
+            background-image: url("../assets/apple.png");
+            animation-delay: .3s;
+        }
+    }
+}

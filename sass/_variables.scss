@@ -1,0 +1,19 @@
+
+$color-primary: mediumseagreen;
+$color-secondary: rgba(#222, .95);
+$color-white: #fff;
+$color-black: #000;
+$color-test: dodgerblue;
+$color-link-hover: complement($color-primary);
+$color-link-bg-hover: #ddd;
+$color-overlay: rgba(#777, .9);
+$font-size-link: 1.6rem;
+$font-size-paragraph: 1.6rem;
+$gutter-item-right: 2rem;
+$link-padding: .8rem;
+$margin-block-top: 3rem;
+$width-standard: 95vw;
+$width-max: 114rem;
+$box-shadow-link: .2rem .2rem .5rem $color-overlay;
+$text-shadow: .2rem .3rem .5rem $color-overlay;
+;

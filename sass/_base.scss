@@ -1,0 +1,35 @@
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    background-color: $color-primary;
+    background-image: linear-gradient(to bottom right$color-primary, lighten($color-primary, 35%)), url("assets/bible-study.jpg");
+    box-sizing: border-box;
+    color: $color-white;
+    line-height: 1.7;
+    width: 100%;
+    padding-top: 2rem;
+
+    font: {
+    family: Montserrat, sans-serif;
+    weight: 400;
+  }
+    @include respond-above(tablet-land){
+      @include responsive-grid(lg);
+      overflow-y: hidden;
+    }
+
+}
+.container {
+    width: $width-standard;
+    $max-width: $width-max;
+    margin: 0 auto;
+    background-image: url("assets/bible-study.jpg");
+}
