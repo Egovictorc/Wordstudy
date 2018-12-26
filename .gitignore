@@ -2,8 +2,8 @@
 Awesome/
 !.scss
 #ignore generated css/ directory files
-css/
-
+css/*.css
+!css/style.css
 #ignore js files
 js/
 
