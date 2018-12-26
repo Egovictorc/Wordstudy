@@ -1,6 +1,6 @@
 #ignore font awesome styles
 Awesome/
-!sass/
+!.scss
 #ignore generated css/ directory files
 css/
 

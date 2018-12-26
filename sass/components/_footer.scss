@@ -4,17 +4,17 @@
     width: 100%;
     margin-top: $margin-block-top;
     text-align: center;
-    
+
     @include respond-above(mobile-land){
-        @include responsive-grid(sm);           
+        @include responsive-grid(sm);
         margin-top: -2rem;
     }
     @include respond-above(tablet-land){
-        @include responsive-grid(lg);           
+        @include responsive-grid(lg);
         position: absolute;
         bottom: 0;
     }
-    
+
     @include flex-column (center);
     small {
         font-size: 1.2rem;

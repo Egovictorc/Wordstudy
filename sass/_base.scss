@@ -31,5 +31,7 @@ body {
     width: $width-standard;
     $max-width: $width-max;
     margin: 0 auto;
-    background-image: url("assets/bible-study.jpg");
+    background-image: linear-gradient(to right, red, url("../assets/bible-study.jpg"));
+    background-size: cover;
+    background-position: top;
 }
